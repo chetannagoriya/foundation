@@ -31,7 +31,7 @@ export default function AboutPage({ onOpenDonate, onOpenVolunteer, onNavigateHom
 
               <div className="space-y-3 text-base text-gray-600 leading-relaxed font-normal">
                 <p>
-                  Celebso Foundation is dedicated to the holistic well-being of underprivileged children across India, providing them with the opportunity to learn, grow and become empowered citizens.
+                  BHS Foundation is dedicated to the holistic well-being of underprivileged children across India, providing them with the opportunity to learn, grow and become empowered citizens.
                 </p>
                 <p>
                   Our focus is simple: education, health, nutrition and empowerment. Because every child deserves access to a better future and hope.
@@ -61,7 +61,7 @@ export default function AboutPage({ onOpenDonate, onOpenVolunteer, onNavigateHom
               <div className="relative w-full max-w-[540px]">
                 <img
                   src="/india-hero-cutout.png"
-                  alt="Building a better India - Celebso Foundation"
+                  alt="Building a better India - BHS Foundation"
                   className="w-full h-auto object-contain select-none"
                 />
               </div>
@@ -107,7 +107,7 @@ export default function AboutPage({ onOpenDonate, onOpenVolunteer, onNavigateHom
                 <div className="absolute bottom-5 left-5 right-5 text-white">
                   <div className="text-xl font-serif font-bold tracking-tight">Veer Singh</div>
                   <div className="text-xs text-orange-400 font-medium tracking-wider uppercase mt-0.5">
-                    Founder & Chief Executive, Celebso
+                    Founder & Chief Executive, BHS Foundation
                   </div>
                 </div>
 
@@ -145,10 +145,10 @@ export default function AboutPage({ onOpenDonate, onOpenVolunteer, onNavigateHom
               {/* Founder Narrative */}
               <div className="space-y-3 text-sm sm:text-base text-gray-600 leading-relaxed font-normal">
                 <p>
-                  I started Celebso Foundation with a clear vision: every child deserves a fair chance in life, regardless of where they were born. While economic growth is essential, social empowerment must run parallel.
+                  I started BHS Foundation with a clear vision: every child deserves a fair chance in life, regardless of where they were born. While economic growth is essential, social empowerment must run parallel.
                 </p>
                 <p>
-                  Through Celebso Foundation, we want to address issues of quality education, nutrition, healthcare, and digital empowerment under one umbrella. Our team works tirelessly on the ground with village communities.
+                  Through BHS Foundation, we want to address issues of quality education, nutrition, healthcare, and digital empowerment under one umbrella. Our team works tirelessly on the ground with village communities.
                 </p>
                 <p className="font-semibold text-gray-900">
                   We invite you to join hands with us.

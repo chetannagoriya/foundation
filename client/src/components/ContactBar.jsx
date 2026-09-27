@@ -11,7 +11,7 @@ export default function ContactBar() {
           <div className="flex flex-wrap items-center gap-6 sm:gap-10">
             {/* Phone */}
             <a
-              href="tel:+919876543210"
+              href="tel:+919784626443"
               className="group flex items-center gap-3 text-gray-700 hover:text-[#FF7A00] transition-colors"
             >
               <div className="w-10 h-10 rounded-full bg-orange-50 border border-orange-100 flex items-center justify-center text-[#FF7A00] group-hover:scale-105 transition-transform">
@@ -19,13 +19,13 @@ export default function ContactBar() {
               </div>
               <div className="text-left">
                 <div className="text-[11px] text-gray-700 uppercase font-semibold">Call Desk</div>
-                <div className="text-sm font-bold text-gray-900">+91 9876543210</div>
+                <div className="text-sm font-bold text-gray-900">+91 9784626443</div>
               </div>
             </a>
 
             {/* Email */}
             <a
-              href="mailto:info@celebsofoundation.org"
+              href="mailto:bhs.foundation@gmail.com"
               className="group flex items-center gap-3 text-gray-700 hover:text-[#FF7A00] transition-colors"
             >
               <div className="w-10 h-10 rounded-full bg-green-50 border border-green-100 flex items-center justify-center text-[#1F8E3D] group-hover:scale-105 transition-transform">
@@ -33,7 +33,7 @@ export default function ContactBar() {
               </div>
               <div className="text-left">
                 <div className="text-[11px] text-gray-700 uppercase font-semibold">Email Us</div>
-                <div className="text-sm font-bold text-gray-900">info@celebsofoundation.org</div>
+                <div className="text-sm font-bold text-gray-900">bhs.foundation@gmail.com</div>
               </div>
             </a>
           </div>
@@ -63,7 +63,7 @@ export default function ContactBar() {
                 <Twitter className="w-4 h-4" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/celebso_foundationn?stkn=MTZoZ2xlczFnajFlYQ%3D%3D"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"

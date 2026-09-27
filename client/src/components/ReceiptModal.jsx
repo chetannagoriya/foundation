@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { X, CheckCircle2, Download, Printer, ShieldCheck } from 'lucide-react';
 import BrandLogo from './BrandLogo';
 
 export default function ReceiptModal({ isOpen, onClose, donationData }) {
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen || !donationData) return null;
 
   const handlePrint = () => {
@@ -10,25 +23,32 @@ export default function ReceiptModal({ isOpen, onClose, donationData }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 animate-fade-in">
-      <div className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 my-8 text-left">
+    <div 
+      className="fixed inset-0 z-50 overflow-y-auto bg-black/65 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 animate-fade-in"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
+      <div className="relative w-full max-w-lg bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col max-h-[90vh] my-auto text-left">
         
         {/* Modal Top Bar */}
-        <div className="p-4 bg-emerald-50 border-b border-emerald-100 flex items-center justify-between">
+        <div className="sticky top-0 z-20 flex-shrink-0 p-4 bg-emerald-50 border-b border-emerald-100 flex items-center justify-between">
           <div className="flex items-center gap-2 text-emerald-800 text-xs font-bold uppercase tracking-wider">
             <CheckCircle2 className="w-4 h-4 text-emerald-600" />
             Contribution Confirmed
           </div>
           <button
+            type="button"
             onClick={onClose}
-            className="w-7 h-7 rounded-full bg-white hover:bg-gray-100 flex items-center justify-center text-gray-500"
+            aria-label="Close"
+            className="w-8 h-8 rounded-full bg-emerald-100/70 hover:bg-emerald-200/80 active:scale-95 flex items-center justify-center text-emerald-900 transition-all cursor-pointer"
           >
-            <X className="w-4 h-4" />
+            <X className="w-4 h-4 stroke-[2.5]" />
           </button>
         </div>
 
         {/* Printable Receipt Card */}
-        <div id="tax-receipt" className="p-6 sm:p-8 space-y-6">
+        <div id="tax-receipt" className="p-5 sm:p-7 space-y-5 overflow-y-auto flex-1 overscroll-contain">
           {/* Header */}
           <div className="flex items-start justify-between border-b border-gray-100 pb-5">
             <div>

@@ -28,7 +28,7 @@ export default function BrandLogo({ className = "h-11", showText = true }) {
       {showText && (
         <div className="flex flex-col text-left">
           <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-gray-900 leading-tight">
-            Celebso Foundation
+            BHS Foundation
           </span>
           <span className="text-[10px] sm:text-xs tracking-widest uppercase text-gray-700 font-medium -mt-0.5">
             Hope · Support · Empower

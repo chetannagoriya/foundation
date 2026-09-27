@@ -12,7 +12,7 @@ const defaultStories = [
     location: 'Varanasi, Uttar Pradesh',
     image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800&auto=format&fit=crop',
     summary: 'From working at roadside stalls to becoming top of his 5th grade class with full scholarship.',
-    fullStory: 'Aarav was assisting his family at a small tea stall before Celebso Foundation field workers met his parents. Through our accelerated learning bridge course and sponsorship, Aarav not only caught up with his peers but secured the first rank in his annual examination.',
+    fullStory: 'Aarav was assisting his family at a small tea stall before BHS Foundation field workers met his parents. Through our accelerated learning bridge course and sponsorship, Aarav not only caught up with his peers but secured the first rank in his annual examination.',
     impactAchieved: 'Full 5-year academic scholarship, uniforms, and learning kits provided.',
   },
   {

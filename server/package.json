@@ -1,7 +1,7 @@
 {
   "name": "celebso-foundation-server",
   "version": "1.0.0",
-  "description": "Backend API for Celebso Foundation",
+  "description": "Backend API for BHS Foundation",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",

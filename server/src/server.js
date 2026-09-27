@@ -25,7 +25,7 @@ app.use('/api/stories', require('./routes/storyRoutes'));
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'healthy',
-    organization: 'Celebso Foundation',
+    organization: 'BHS Foundation',
     mission: 'Hope, Support, Empower',
     timestamp: new Date().toISOString(),
   });
@@ -34,5 +34,5 @@ app.get('/api/health', (req, res) => {
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`[Celebso Foundation Server] Running on http://localhost:${PORT}`);
+  console.log(`[BHS Foundation Server] Running on http://localhost:${PORT}`);
 });

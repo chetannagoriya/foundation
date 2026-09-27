@@ -1,20 +1,43 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { X, MapPin, Heart, Sparkles, Calendar, BookOpen } from 'lucide-react';
 
 export default function StoryDetailModal({ isOpen, onClose, story, onOpenDonate }) {
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen || !story) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 animate-fade-in">
-      <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 my-8 text-left">
+    <div 
+      className="fixed inset-0 z-50 overflow-y-auto bg-black/65 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 animate-fade-in"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
+      <div className="relative w-full max-w-xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col max-h-[90vh] my-auto text-left">
         
         {/* Close Button */}
         <button
+          type="button"
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-sm text-white flex items-center justify-center transition-colors"
+          aria-label="Close"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 active:scale-95 backdrop-blur-sm text-white flex items-center justify-center transition-all cursor-pointer"
         >
-          <X className="w-5 h-5" />
+          <X className="w-5 h-5 stroke-[2.5]" />
         </button>
+
+        {/* Scrollable Container */}
+        <div className="overflow-y-auto flex-1 overscroll-contain">
 
         {/* Hero Image */}
         <div className="relative aspect-[16/9] w-full overflow-hidden bg-gray-100">
@@ -93,6 +116,8 @@ export default function StoryDetailModal({ isOpen, onClose, story, onOpenDonate 
               <span>Sponsor a Child</span>
             </button>
           </div>
+
+        </div>
 
         </div>
 

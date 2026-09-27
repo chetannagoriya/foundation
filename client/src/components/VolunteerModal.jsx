@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, UserCheck, CheckCircle, Loader2 } from 'lucide-react';
 import { api } from '../services/api';
 
@@ -22,6 +22,19 @@ export default function VolunteerModal({ isOpen, onClose, onShowToast }) {
     message: '',
     areaOfInterest: ['Teaching & Academic Tutoring'],
   });
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -53,30 +66,37 @@ export default function VolunteerModal({ isOpen, onClose, onShowToast }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 animate-fade-in">
-      <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 my-8 text-left">
+    <div 
+      className="fixed inset-0 z-50 overflow-y-auto bg-black/65 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 animate-fade-in"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
+      <div className="relative w-full max-w-md bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col max-h-[90vh] my-auto text-left">
         
-        {/* Header */}
-        <div className="bg-gradient-to-r from-emerald-600 to-[#1F8E3D] p-6 text-white relative">
+        {/* Sticky Header with Always-Visible Close Button */}
+        <div className="sticky top-0 z-20 flex-shrink-0 bg-gradient-to-r from-emerald-600 to-[#1F8E3D] px-5 py-4 sm:px-6 sm:py-5 text-white relative shadow-sm">
           <button
+            type="button"
             onClick={onClose}
-            className="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
+            aria-label="Close"
+            className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 w-8 h-8 rounded-full bg-black/20 hover:bg-black/35 active:scale-95 flex items-center justify-center text-white transition-all cursor-pointer z-30"
           >
-            <X className="w-5 h-5" />
+            <X className="w-5 h-5 stroke-[2.5]" />
           </button>
 
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-100">
-            <UserCheck className="w-4 h-4" />
+          <div className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-emerald-100">
+            <UserCheck className="w-3.5 h-3.5" />
             Join Our Movement
           </div>
-          <h3 className="text-2xl font-serif font-bold mt-1">Become a Volunteer</h3>
-          <p className="text-xs text-emerald-100 mt-1">
+          <h3 className="text-xl sm:text-2xl font-serif font-bold mt-0.5">Become a Volunteer</h3>
+          <p className="text-[11px] text-emerald-100 mt-0.5">
             Empower young minds by dedicating your time, skills, and energy.
           </p>
         </div>
 
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-4">
+        {/* Scrollable Form */}
+        <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-4 text-left overflow-y-auto flex-1 overscroll-contain">
           <div>
             <label className="block text-xs font-bold text-gray-700 uppercase mb-1.5">
               Full Name *

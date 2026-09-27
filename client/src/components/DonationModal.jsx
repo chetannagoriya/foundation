@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Heart, ShieldCheck, CheckCircle2, Loader2, Sparkles } from 'lucide-react';
 import { api } from '../services/api';
 
@@ -17,6 +17,19 @@ export default function DonationModal({ isOpen, onClose, onSuccess, initialCause
     phone: '',
     panNumber: '',
   });
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -76,30 +89,37 @@ export default function DonationModal({ isOpen, onClose, onSuccess, initialCause
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 animate-fade-in">
-      <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 my-8">
+    <div 
+      className="fixed inset-0 z-50 overflow-y-auto bg-black/65 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 animate-fade-in"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
+      <div className="relative w-full max-w-md bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col max-h-[90vh] my-auto">
         
-        {/* Header Bar */}
-        <div className="bg-gradient-to-r from-orange-500 via-[#FF7A00] to-orange-600 p-6 text-white text-left relative">
+        {/* Sticky Header Bar with Always-Visible Close Button */}
+        <div className="sticky top-0 z-20 flex-shrink-0 bg-gradient-to-r from-orange-500 via-[#FF7A00] to-orange-600 px-5 py-4 sm:px-6 sm:py-5 text-white text-left shadow-sm">
           <button
+            type="button"
             onClick={onClose}
-            className="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
+            aria-label="Close"
+            className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 w-8 h-8 rounded-full bg-black/20 hover:bg-black/35 active:scale-95 flex items-center justify-center text-white transition-all cursor-pointer z-30"
           >
-            <X className="w-5 h-5" />
+            <X className="w-5 h-5 stroke-[2.5]" />
           </button>
 
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-orange-100">
-            <Heart className="w-4 h-4 fill-white" />
+          <div className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-orange-100">
+            <Heart className="w-3.5 h-3.5 fill-white" />
             Make an Impact
           </div>
-          <h3 className="text-2xl font-serif font-bold mt-1">Support Celebso Foundation</h3>
-          <p className="text-xs text-orange-100 mt-1">
-            Eligible for 50% Tax Exemption under Section 80G of Income Tax Act
+          <h3 className="text-xl sm:text-2xl font-serif font-bold mt-0.5">Support BHS Foundation</h3>
+          <p className="text-[11px] text-orange-100 mt-0.5">
+            50% Tax Exemption under Section 80G of Income Tax Act
           </p>
         </div>
 
-        {/* Form Body */}
-        <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-6 text-left">
+        {/* Scrollable Form Body */}
+        <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-4 sm:space-y-5 text-left overflow-y-auto flex-1 overscroll-contain">
           
           {/* Frequency Toggle */}
           <div className="grid grid-cols-2 p-1 bg-gray-100 rounded-xl">

@@ -4,7 +4,7 @@ let isConnected = false;
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/celebso_foundation', {
+    const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/bhs_foundation', {
       serverSelectionTimeoutMS: 2500,
     });
     isConnected = true;

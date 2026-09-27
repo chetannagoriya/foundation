@@ -1,6 +1,6 @@
-# Celebso Foundation - Hope, Support, Empower 🇮🇳
+# BHS Foundation - Hope, Support, Empower 🇮🇳
 
-A modern, high-performance, full-stack **MERN** web portal built for **Celebso Foundation**, matching the provided homepage UI designs.
+A modern, high-performance, full-stack **MERN** web portal built for **BHS Foundation**, matching the provided homepage UI designs.
 
 ![Celebso Foundation Preview](client/src/assets/preview.png)
 
@@ -21,7 +21,7 @@ A modern, high-performance, full-stack **MERN** web portal built for **Celebso F
    - **Real Success Stories**: Interactive case study cards (Aarav, Priya, Ankit) with detailed modal popups.
    - **Nationwide Presence (Interactive India Map)**: Live statistics counters (52,000+ children, 15,000+ meals daily, 280+ health camps) and clickable state pins across India.
    - **Call-To-Action Banner**: *"Join our mission! Be the reason someone smiles today."* with dual Donate / Volunteer buttons.
-   - **Contact & Social Bar**: Call desk (+91 9876543210), email, and social media handles.
+   - **Contact & Social Bar**: Call desk (+91 9784626443), email, and social media handles.
    - **Footer**: Full navigation, legal links, and 80G / 12A certification notice.
 
 3. **MERN Stack Functionality**:

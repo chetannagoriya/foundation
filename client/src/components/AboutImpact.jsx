@@ -42,7 +42,7 @@ export default function AboutImpact({ onOpenDonate, onOpenStory }) {
               <div className="col-span-7 row-span-2 relative group overflow-hidden rounded-2xl shadow-lg border-2 border-white">
                 <img
                   src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800&auto=format&fit=crop"
-                  alt="Child with slate at Celebso Foundation"
+                  alt="Child with slate at BHS Foundation"
                   className="w-full h-80 sm:h-96 object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>

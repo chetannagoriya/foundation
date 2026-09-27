@@ -2,7 +2,7 @@
   "name": "foundation-celebso",
   "version": "1.0.0",
   "private": true,
-  "description": "Celebso Foundation - Hope, Support, Empower - Official Web Portal (MERN Stack)",
+  "description": "BHS Foundation - Hope, Support, Empower - Official Web Portal (MERN Stack)",
   "scripts": {
     "server": "npm run dev --prefix server",
     "client": "npm run dev --prefix client",

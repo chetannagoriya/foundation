@@ -8,13 +8,15 @@ export default function Footer({ onOpenDonate, onNavigate }) {
     { label: 'Our Work', page: 'home', hash: '#pillars' },
     { label: 'Stories', page: 'home', hash: '#stories' },
     { label: 'Get Involved', page: 'home', hash: '#get-involved' },
-    { label: 'Contact', page: 'home', hash: '#contact' },
+    { label: 'Contact', page: 'contact', path: '/contact' },
   ];
 
   const handleLinkClick = (e, link) => {
     e.preventDefault();
     if (link.page === 'about') {
       if (onNavigate) onNavigate('about');
+    } else if (link.page === 'contact') {
+      if (onNavigate) onNavigate('contact');
     } else {
       if (onNavigate) onNavigate('home');
       setTimeout(() => {
@@ -72,10 +74,17 @@ export default function Footer({ onOpenDonate, onNavigate }) {
 
         {/* Bottom Sub-footer */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-600 gap-4">
-          <p>© 2026 Celebso Foundation. All rights reserved.</p>
+          <p>© 2026 BHS Foundation. All rights reserved.</p>
 
           <div className="flex items-center gap-6">
-            <a href="#privacy" className="hover:text-gray-900 transition-colors">
+            <a
+              href="/privacy"
+              onClick={(e) => {
+                e.preventDefault();
+                if (onNavigate) onNavigate('privacy');
+              }}
+              className="hover:text-gray-900 transition-colors cursor-pointer"
+            >
               Privacy Policy
             </a>
             <span className="text-gray-300">•</span>

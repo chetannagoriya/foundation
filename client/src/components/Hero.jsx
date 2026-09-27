@@ -44,7 +44,7 @@ export default function Hero({ onOpenDonate }) {
             <div className="relative w-full max-w-[560px]">
               <img
                 src="/india-hero-cutout.png"
-                alt="Building a better India - Celebso Foundation"
+                alt="Building a better India - BHS Foundation"
                 className="w-full h-auto object-contain select-none transition-transform duration-500 hover:scale-[1.01]"
               />
             </div>

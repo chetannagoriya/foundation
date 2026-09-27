@@ -9,6 +9,8 @@ import CallToAction from './components/CallToAction';
 import ContactBar from './components/ContactBar';
 import Footer from './components/Footer';
 import AboutPage from './components/AboutPage';
+import PrivacyPolicyPage from './components/PrivacyPolicyPage';
+import ContactPage from './components/ContactPage';
 
 // Modals
 import DonationModal from './components/DonationModal';
@@ -26,7 +28,7 @@ export default function App() {
   const [selectedStory, setSelectedStory] = useState(null);
   const [toastMessage, setToastMessage] = useState('');
 
-  // Handle URL changes (/about, /, and clean up any legacy #/about)
+  // Handle URL changes (/about, /privacy, /, and clean up any legacy hashes)
   useEffect(() => {
     const handleLocation = () => {
       const path = window.location.pathname.toLowerCase();
@@ -36,6 +38,20 @@ export default function App() {
       if (hash.includes('about')) {
         window.history.replaceState(null, '', '/about');
         setCurrentPage('about');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
+      if (hash.includes('privacy') || path === '/privacy' || path.startsWith('/privacy')) {
+        window.history.replaceState(null, '', '/privacy');
+        setCurrentPage('privacy');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
+      if (hash.includes('contact') || path === '/contact' || path.startsWith('/contact')) {
+        window.history.replaceState(null, '', '/contact');
+        setCurrentPage('contact');
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
       }
@@ -54,7 +70,7 @@ export default function App() {
   }, []);
 
   const handleNavigate = (page) => {
-    const targetPath = page === 'about' ? '/about' : '/';
+    const targetPath = page === 'about' ? '/about' : page === 'privacy' ? '/privacy' : page === 'contact' ? '/contact' : '/';
     if (window.location.pathname !== targetPath) {
       window.history.pushState(null, '', targetPath);
     }
@@ -97,6 +113,18 @@ export default function App() {
             onOpenVolunteer={() => setVolunteerModalOpen(true)}
             onNavigateHome={() => handleNavigate('home')}
           />
+        ) : currentPage === 'privacy' ? (
+          <PrivacyPolicyPage
+            onNavigateHome={() => handleNavigate('home')}
+          />
+        ) : currentPage === 'contact' ? (
+          <ContactPage
+            onOpenDonate={() => handleOpenDonate('general')}
+            onOpenVolunteer={() => setVolunteerModalOpen(true)}
+            onNavigateAbout={() => handleNavigate('about')}
+            onNavigateHome={() => handleNavigate('home')}
+            onShowToast={showToast}
+          />
         ) : (
           <>
             {/* Hero Section: Building a better India, one life at a time */}
@@ -116,7 +144,7 @@ export default function App() {
                   age: '6-14',
                   location: 'Multi-State Centers',
                   image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop',
-                  summary: 'Celebso Foundation was started with a single learning shelter and has now grown to support over 52,000 children across 18 states in India.',
+                  summary: 'BHS Foundation was started with a single learning shelter and has now grown to support over 52,000 children across 18 states in India.',
                   fullStory: 'Through community engagement, trained educators, and corporate social partnerships, we construct eco-friendly learning spaces, distribute learning tablets, provide hot protein-rich mid-day meals, and run pediatric medical vans.',
                   impactAchieved: '52,000+ children enrolled, 15,000+ daily meals served, 280+ health camps.',
                 });

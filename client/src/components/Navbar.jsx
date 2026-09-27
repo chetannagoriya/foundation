@@ -19,7 +19,7 @@ export default function Navbar({ onOpenDonate, onOpenVolunteer, currentPage = 'h
     { label: 'Our Work', page: 'home', hash: '#pillars' },
     { label: 'Stories', page: 'home', hash: '#stories' },
     { label: 'Get Involved', page: 'home', hash: '#get-involved' },
-    { label: 'Contact', page: 'home', hash: '#contact' },
+    { label: 'Contact', page: 'contact', path: '/contact' },
   ];
 
   const handleLinkClick = (e, link) => {
@@ -28,6 +28,8 @@ export default function Navbar({ onOpenDonate, onOpenVolunteer, currentPage = 'h
 
     if (link.page === 'about') {
       if (onNavigate) onNavigate('about');
+    } else if (link.page === 'contact') {
+      if (onNavigate) onNavigate('contact');
     } else {
       if (currentPage !== 'home') {
         if (onNavigate) onNavigate('home');
