@@ -82,14 +82,9 @@ export default function Pillars({ onSelectPillar }) {
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-600 leading-relaxed font-normal mb-4">
+                <p className="text-sm text-gray-600 leading-relaxed font-normal">
                   {item.description}
                 </p>
-
-                {/* Bottom tag */}
-                <span className="mt-auto text-xs font-semibold text-gray-500 bg-gray-50 px-3 py-1 rounded-full group-hover:bg-white group-hover:text-gray-800 transition-colors">
-                  {item.stats}
-                </span>
               </div>
             );
           })}

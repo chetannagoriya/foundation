@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { GraduationCap, Utensils, HeartHandshake, MapPin } from 'lucide-react';
-import IndiaMapSvg from './IndiaMapSvg';
 
 const stats = [
   {
     id: 1,
-    value: '52,000+',
+    value: '50+',
     label: 'Children Educated',
     icon: GraduationCap,
     color: 'text-[#FF7A00]',
@@ -13,7 +12,7 @@ const stats = [
   },
   {
     id: 2,
-    value: '15,000+',
+    value: '70+',
     label: 'Meals Provided Daily',
     icon: Utensils,
     color: 'text-amber-600',
@@ -21,7 +20,7 @@ const stats = [
   },
   {
     id: 3,
-    value: '280+',
+    value: '20+',
     label: 'Healthcare Camps Held',
     icon: HeartHandshake,
     color: 'text-rose-500',
@@ -29,7 +28,7 @@ const stats = [
   },
   {
     id: 4,
-    value: '18+',
+    value: '2+',
     label: 'States Actively Covered',
     icon: MapPin,
     color: 'text-[#1F8E3D]',
@@ -135,9 +134,13 @@ export default function MapReach() {
             
             <div className="relative w-full max-w-[480px] aspect-[1/1.08] bg-white rounded-3xl p-4 sm:p-6 shadow-card border border-gray-100 flex items-center justify-center overflow-hidden">
               
-              {/* Authentic India Map Vector with Green Brush Accents */}
+              {/* Orange India Map */}
               <div className="relative w-full h-full flex items-center justify-center">
-                <IndiaMapSvg className="w-full h-full object-contain filter drop-shadow-md select-none" />
+                <img
+                  src="/orange-india-map.png"
+                  alt="BHS Foundation Nationwide Presence Map"
+                  className="w-full h-full object-contain filter drop-shadow-md select-none pointer-events-none"
+                />
 
                 {/* Location Pins across Indian States */}
                 {statePins.map((pin) => {

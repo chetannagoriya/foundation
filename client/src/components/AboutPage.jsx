@@ -71,7 +71,7 @@ export default function AboutPage({ onOpenDonate, onOpenVolunteer, onNavigateHom
         </div>
       </section>
 
-      {/* 2. FOUNDER SECTION - VEER SINGH */}
+      {/* 2. LEADERSHIP SECTION - MEENA DEVI & VEER SINGH */}
       <section id="founder-section" className="py-16 sm:py-24 bg-white border-t border-gray-100 relative overflow-hidden">
         
         {/* Tricolor brush strokes on the left margin */}
@@ -91,116 +91,178 @@ export default function AboutPage({ onOpenDonate, onOpenVolunteer, onNavigateHom
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#FF7A00] bg-orange-50 px-3.5 py-1 rounded-full border border-orange-100 inline-block mb-3">
+              Our Leadership
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-gray-900 leading-tight">
+              Guided by Compassion, Driven by Purpose
+            </h2>
+            <p className="mt-3 text-sm sm:text-base text-gray-600 leading-relaxed">
+              Dedicated leadership steering grassroots transformation, quality education, and community empowerment across India.
+            </p>
+          </div>
+
+          {/* Leadership Cards Grid - Meena Devi & Veer Singh */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
             
-            {/* Left: Founder Portrait */}
-            <div className="lg:col-span-5 relative flex justify-center">
-              <div className="relative w-full max-w-[380px] aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-neutral-900 group">
-                <img
-                  src="/veer-singh.png?v=2"
-                  alt="Veer Singh - Founder & Chief Executive"
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                />
-                
-                {/* Brand Overlay at bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent"></div>
-                <div className="absolute bottom-5 left-5 right-5 text-white">
-                  <div className="text-xl font-serif font-bold tracking-tight">Veer Singh</div>
-                  <div className="text-xs text-orange-400 font-medium tracking-wider uppercase mt-0.5">
-                    Founder & Chief Executive, BHS Foundation
+            {/* Leader 1: Meena Devi (Chairperson / Patron) */}
+            <div className="bg-[#FAF8F5] border border-[#EFE9DF] rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+              <div className="space-y-6">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+                  {/* Portrait */}
+                  <div className="relative w-36 sm:w-44 aspect-[4/5] rounded-2xl overflow-hidden shadow-lg border-2 border-white flex-shrink-0 bg-neutral-900 group">
+                    <img
+                      src="/meena-devi.jpg"
+                      alt="Meena Devi - Chairperson / Patron"
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute bottom-2 left-2 right-2 bg-black/60 backdrop-blur-xs py-1 px-2 rounded-md flex items-center justify-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#FF7A00]"></span>
+                      <span className="w-2 h-2 rounded-full bg-white"></span>
+                      <span className="w-2 h-2 rounded-full bg-[#1F8E3D]"></span>
+                    </div>
+                  </div>
+
+                  {/* Info */}
+                  <div className="space-y-2 text-center sm:text-left flex-1">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#FF7A00] bg-orange-100/60 px-3 py-1 rounded-full inline-block border border-orange-200/50">
+                      Chairperson / Patron
+                    </span>
+                    <h3 className="text-2xl sm:text-3xl font-serif font-bold text-gray-900">
+                      Meena Devi
+                    </h3>
+                    <p className="text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wider">
+                      Chairperson / Patron • BHS Foundation
+                    </p>
+                    
+                    {/* Quote */}
+                    <div className="border-l-2 sm:border-l-4 border-[#FF7A00] pl-3 py-1 mt-3 text-left">
+                      <p className="text-sm sm:text-base font-serif italic text-gray-800 leading-snug">
+                        “Empowering lives and building a better tomorrow. When we nurture our children with care and education, we build an unbreakable foundation for the future.”
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                {/* Floating Tricolor Badge */}
-                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full shadow-sm flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-[#FF7A00]"></span>
-                  <span className="w-2 h-2 rounded-full bg-gray-300"></span>
-                  <span className="w-2 h-2 rounded-full bg-[#1F8E3D]"></span>
-                  <span className="text-[10px] font-bold text-gray-800 uppercase tracking-wider ml-1">Leadership</span>
+                <div className="text-sm text-gray-600 leading-relaxed space-y-2.5 pt-2">
+                  <p>
+                    Under the visionary guidance and patronship of Meena Devi, BHS Foundation champions equitable opportunities, holistic child development, and family welfare across underserved communities.
+                  </p>
+                  <p>
+                    Her dedication anchors our organizational values, ensuring every initiative is delivered with compassion, transparency, and grassroots integrity.
+                  </p>
                 </div>
+              </div>
+
+              <div className="pt-6 mt-6 border-t border-[#EFE9DF] flex items-center justify-between text-xs text-gray-500">
+                <span className="font-semibold text-gray-700">Patronage & Governance</span>
+                <span className="text-[#FF7A00] font-medium">BHS Foundation</span>
               </div>
             </div>
 
-            {/* Right: Founder's Story & Quotes */}
-            <div className="lg:col-span-7 space-y-6">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-[#FF7A00] bg-orange-50 px-3.5 py-1 rounded-full border border-orange-100">
-                  Founder
-                </span>
-                <h2 className="mt-2 text-3xl sm:text-4xl font-serif font-bold text-gray-900">
-                  Veer Singh
-                </h2>
-                <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider">
-                  Founder & Chief Executive
-                </p>
-              </div>
-
-              {/* Quote Block */}
-              <div className="border-l-4 border-[#FF7A00] pl-4 sm:pl-5 py-1">
-                <p className="text-lg sm:text-xl font-serif italic text-gray-900 leading-snug">
-                  “India is not just a land of history and culture. To succeed in the future, it must invest in its children.”
-                </p>
-              </div>
-
-              {/* Founder Narrative */}
-              <div className="space-y-3 text-sm sm:text-base text-gray-600 leading-relaxed font-normal">
-                <p>
-                  I started BHS Foundation with a clear vision: every child deserves a fair chance in life, regardless of where they were born. While economic growth is essential, social empowerment must run parallel.
-                </p>
-                <p>
-                  Through BHS Foundation, we want to address issues of quality education, nutrition, healthcare, and digital empowerment under one umbrella. Our team works tirelessly on the ground with village communities.
-                </p>
-                <p className="font-semibold text-gray-900">
-                  We invite you to join hands with us.
-                </p>
-              </div>
-
-              {/* 4 Feature Badges */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <div className="flex items-start gap-3 p-3.5 rounded-xl bg-gray-50 border border-gray-100">
-                  <div className="w-8 h-8 rounded-lg bg-orange-100 text-[#FF7A00] flex items-center justify-center flex-shrink-0 font-bold text-xs">
-                    01
+            {/* Leader 2: Veer Singh (Founder / Managing Trustee) */}
+            <div className="bg-[#FAF8F5] border border-[#EFE9DF] rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+              <div className="space-y-6">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+                  {/* Portrait */}
+                  <div className="relative w-36 sm:w-44 aspect-[4/5] rounded-2xl overflow-hidden shadow-lg border-2 border-white flex-shrink-0 bg-neutral-900 group">
+                    <img
+                      src="/veer-singh.png"
+                      alt="Veer Singh - Founder / Managing Trustee"
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute bottom-2 left-2 right-2 bg-black/60 backdrop-blur-xs py-1 px-2 rounded-md flex items-center justify-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#FF7A00]"></span>
+                      <span className="w-2 h-2 rounded-full bg-white"></span>
+                      <span className="w-2 h-2 rounded-full bg-[#1F8E3D]"></span>
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-xs font-bold text-gray-900 uppercase">Direct Impact</div>
-                    <div className="text-xs text-gray-500 mt-0.5">Transparent, village-level work without intermediaries</div>
+
+                  {/* Info */}
+                  <div className="space-y-2 text-center sm:text-left flex-1">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#FF7A00] bg-orange-100/60 px-3 py-1 rounded-full inline-block border border-orange-200/50">
+                      Founder / Managing Trustee
+                    </span>
+                    <h3 className="text-2xl sm:text-3xl font-serif font-bold text-gray-900">
+                      Veer Singh
+                    </h3>
+                    <p className="text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wider">
+                      Founder / Managing Trustee • BHS Foundation
+                    </p>
+
+                    {/* Quote */}
+                    <div className="border-l-2 sm:border-l-4 border-[#FF7A00] pl-3 py-1 mt-3 text-left">
+                      <p className="text-sm sm:text-base font-serif italic text-gray-800 leading-snug">
+                        “India is not just a land of history and culture. To succeed in the future, it must invest in its children.”
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 p-3.5 rounded-xl bg-gray-50 border border-gray-100">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-100 text-[#1F8E3D] flex items-center justify-center flex-shrink-0 font-bold text-xs">
-                    02
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-gray-900 uppercase">Registered NGO</div>
-                    <div className="text-xs text-gray-500 mt-0.5">Certified under Section 80G and 12A of Income Tax</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-3.5 rounded-xl bg-gray-50 border border-gray-100">
-                  <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 font-bold text-xs">
-                    03
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-gray-900 uppercase">Grassroots Focus</div>
-                    <div className="text-xs text-gray-500 mt-0.5">Working directly with schools, teachers and families</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-3.5 rounded-xl bg-gray-50 border border-gray-100">
-                  <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center flex-shrink-0 font-bold text-xs">
-                    04
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-gray-900 uppercase">Scalable Vision</div>
-                    <div className="text-xs text-gray-500 mt-0.5">Expanding reach to touch 100,000+ lives across 20+ states</div>
-                  </div>
+                <div className="text-sm text-gray-600 leading-relaxed space-y-2.5 pt-2">
+                  <p>
+                    Veer Singh founded BHS Foundation with a clear vision: every child deserves a fair chance in life, regardless of where they were born. While economic growth is essential, social empowerment must run parallel.
+                  </p>
+                  <p>
+                    Working tirelessly on the ground with village communities, teachers, and volunteers, he leads operational growth and scalable programs in education, health, and nutrition.
+                  </p>
                 </div>
               </div>
 
+              <div className="pt-6 mt-6 border-t border-[#EFE9DF] flex items-center justify-between text-xs text-gray-500">
+                <span className="font-semibold text-gray-700">Executive Leadership</span>
+                <span className="text-[#FF7A00] font-medium">BHS Foundation</span>
+              </div>
             </div>
 
           </div>
+
+          {/* 4 Feature Badges Across 4 Columns */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 pt-8 border-t border-gray-100">
+            <div className="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100">
+              <div className="w-8 h-8 rounded-lg bg-orange-100 text-[#FF7A00] flex items-center justify-center flex-shrink-0 font-bold text-xs">
+                01
+              </div>
+              <div>
+                <div className="text-xs font-bold text-gray-900 uppercase">Direct Impact</div>
+                <div className="text-xs text-gray-500 mt-0.5">Transparent, village-level work without intermediaries</div>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100">
+              <div className="w-8 h-8 rounded-lg bg-emerald-100 text-[#1F8E3D] flex items-center justify-center flex-shrink-0 font-bold text-xs">
+                02
+              </div>
+              <div>
+                <div className="text-xs font-bold text-gray-900 uppercase">Registered NGO</div>
+                <div className="text-xs text-gray-500 mt-0.5">Certified under Section 80G and 12A of Income Tax</div>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100">
+              <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 font-bold text-xs">
+                03
+              </div>
+              <div>
+                <div className="text-xs font-bold text-gray-900 uppercase">Grassroots Focus</div>
+                <div className="text-xs text-gray-500 mt-0.5">Working directly with schools, teachers and families</div>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100">
+              <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center flex-shrink-0 font-bold text-xs">
+                04
+              </div>
+              <div>
+                <div className="text-xs font-bold text-gray-900 uppercase">Scalable Vision</div>
+                <div className="text-xs text-gray-500 mt-0.5">Expanding reach to touch 100,000+ lives across 20+ states</div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 

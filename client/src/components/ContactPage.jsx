@@ -392,19 +392,20 @@ export default function ContactPage({
               </div>
             </div>
 
-            {/* Right Column: Founder Spotlight Card */}
-            <div className="lg:col-span-7">
-              <div className="bg-[#FAF8F5] border border-[#EFE9DF] rounded-3xl p-6 sm:p-8 shadow-sm">
-                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-7">
+            {/* Right Column: Leadership Spotlight Cards (Meena Devi & Veer Singh) */}
+            <div className="lg:col-span-7 space-y-5">
+              
+              {/* Card 1: Meena Devi (Chairperson / Patron) */}
+              <div className="bg-[#FAF8F5] border border-[#EFE9DF] rounded-3xl p-5 sm:p-6 shadow-sm">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6">
                   
-                  {/* Founder Image with tricolor touch */}
-                  <div className="relative w-36 sm:w-44 aspect-[4/5] rounded-2xl overflow-hidden shadow-md border-2 border-white flex-shrink-0 bg-neutral-900">
+                  {/* Image with tricolor touch */}
+                  <div className="relative w-32 sm:w-36 aspect-[4/5] rounded-2xl overflow-hidden shadow-md border-2 border-white flex-shrink-0 bg-neutral-900">
                     <img
-                      src="/veer-singh.png"
-                      alt="Veer Singh - Founder & Managing Trustee"
+                      src="/meena-devi.jpg"
+                      alt="Meena Devi - Chairperson / Patron"
                       className="w-full h-full object-cover object-top"
                     />
-                    {/* Tricolor corner ribbon */}
                     <div className="absolute bottom-2 left-2 right-2 bg-black/60 backdrop-blur-xs py-1 px-2 rounded-md flex items-center justify-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-[#FF7A00]"></span>
                       <span className="w-2 h-2 rounded-full bg-white"></span>
@@ -412,38 +413,80 @@ export default function ContactPage({
                     </div>
                   </div>
 
-                  {/* Founder Quote & Details */}
-                  <div className="space-y-3 text-left flex-1">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#FF7A00] bg-orange-100/60 px-3 py-1 rounded-full inline-block">
-                      FOUNDER & MANAGING TRUSTEE
+                  {/* Details */}
+                  <div className="space-y-2 text-left flex-1">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#FF7A00] bg-orange-100/60 px-3 py-0.5 rounded-full inline-block">
+                      CHAIRPERSON / PATRON
                     </span>
 
                     <div>
-                      <h3 className="text-2xl sm:text-3xl font-serif font-bold text-gray-900 leading-tight">
-                        Veer Singh
+                      <h3 className="text-xl sm:text-2xl font-serif font-bold text-gray-900 leading-tight">
+                        Meena Devi
                       </h3>
                       <p className="text-xs text-gray-600 font-medium mt-0.5">
-                        Founder • BHS Foundation
+                        Chairperson / Patron • BHS Foundation
                       </p>
                     </div>
 
-                    <p className="font-serif italic text-gray-700 text-sm sm:text-base leading-relaxed border-l-2 border-[#FF7A00] pl-3 py-0.5">
+                    <p className="font-serif italic text-gray-700 text-xs sm:text-sm leading-relaxed border-l-2 border-[#FF7A00] pl-3 py-0.5">
+                      “Empowering lives and building a better tomorrow. When we nurture our children with care and education, we build an unbreakable foundation for the future.”
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
+              {/* Card 2: Veer Singh (Founder / Managing Trustee) */}
+              <div className="bg-[#FAF8F5] border border-[#EFE9DF] rounded-3xl p-5 sm:p-6 shadow-sm">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6">
+                  
+                  {/* Image with tricolor touch */}
+                  <div className="relative w-32 sm:w-36 aspect-[4/5] rounded-2xl overflow-hidden shadow-md border-2 border-white flex-shrink-0 bg-neutral-900">
+                    <img
+                      src="/veer-singh.png"
+                      alt="Veer Singh - Founder / Managing Trustee"
+                      className="w-full h-full object-cover object-top"
+                    />
+                    <div className="absolute bottom-2 left-2 right-2 bg-black/60 backdrop-blur-xs py-1 px-2 rounded-md flex items-center justify-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#FF7A00]"></span>
+                      <span className="w-2 h-2 rounded-full bg-white"></span>
+                      <span className="w-2 h-2 rounded-full bg-[#1F8E3D]"></span>
+                    </div>
+                  </div>
+
+                  {/* Details */}
+                  <div className="space-y-2 text-left flex-1">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#FF7A00] bg-orange-100/60 px-3 py-0.5 rounded-full inline-block">
+                      FOUNDER / MANAGING TRUSTEE
+                    </span>
+
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-serif font-bold text-gray-900 leading-tight">
+                        Veer Singh
+                      </h3>
+                      <p className="text-xs text-gray-600 font-medium mt-0.5">
+                        Founder / Managing Trustee • BHS Foundation
+                      </p>
+                    </div>
+
+                    <p className="font-serif italic text-gray-700 text-xs sm:text-sm leading-relaxed border-l-2 border-[#FF7A00] pl-3 py-0.5">
                       “Every child has a dream. The greatest gift we can give them is a chance to pursue it.”
                     </p>
 
-                    <div className="pt-2">
+                    <div className="pt-1">
                       <button
                         onClick={onNavigateAbout}
-                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#FF7A00] hover:text-[#E65D00] transition group cursor-pointer"
+                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#FF7A00] hover:text-[#E65D00] transition group cursor-pointer"
                       >
                         <span>Know the story</span>
-                        <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                       </button>
                     </div>
                   </div>
 
                 </div>
               </div>
+
             </div>
 
           </div>

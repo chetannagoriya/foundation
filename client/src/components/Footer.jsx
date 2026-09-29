@@ -74,7 +74,7 @@ export default function Footer({ onOpenDonate, onNavigate }) {
 
         {/* Bottom Sub-footer */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-600 gap-4">
-          <p>© 2026 BHS Foundation. All rights reserved.</p>
+          <p>© 2026 BHS Foundation & Celebso Group. All rights reserved.</p>
 
           <div className="flex items-center gap-6">
             <a
